@@ -16,20 +16,23 @@
   box-sizing: border-box;
 }
 
-html {
-  height: -webkit-fill-available;
+html, body {
+  margin: 0;
 }
 
 body {
-  background-image: url(Bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;   /* ← เปลี่ยนจาก fixed */
-  color: var(--text-color);
+  min-height: 100dvh;
   font-family: 'Sarabun', sans-serif;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  color: var(--text-color);
+}
+
+/* background layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("Bg.png") center / cover no-repeat;
+  z-index: -1;
 }
 
 
