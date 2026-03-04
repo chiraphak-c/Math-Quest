@@ -9,67 +9,80 @@
 </head>
 <body>
 
-    <div id="screen-home">
-        <header>
-            <h1>อาณาจักรตัวเลข</h1>
-            <p>เลือกระดับความยากเพื่อเริ่มการผจญภัย</p>
-        </header>
+  <!-- หน้า HOME -->
+  <div id="screen-home">
+    <header>
+      <h1>อาณาจักรตัวเลข</h1>
+      <p>เลือกระดับความยากเพื่อเริ่มการผจญภัย</p>
+    </header>
 
-        <div id="intro-story">
-            <p>
-                ดินแดนแห่งหนึ่งที่ทุกอย่างถูกควบคุมด้วยกฎของตัวเลข
-                <br>กำลังรอผู้กล้าที่จะเข้ามาพิสูจน์ตัวเอง
-            </p>
-            <p>
-                เลือกเส้นทางของเจ้า แล้วออกเดินทางผจญภัยผ่านบททดสอบ
-                <br>เพื่อพิสูจน์ว่าตัวเลขไม่ใช่ศัตรู
-            </p>
-        </div>
-        <div id="difficulty-buttons">
-            <button onclick="startGame('easy')">
-                ง่าย
-            </button>
-
-            <button onclick="startGame('medium')">
-                กลาง
-            </button>
-
-            <button onclick="startGame('hard')">
-                ยาก
-            </button>
-        </div>
+    <div id="intro-story">
+      <p>
+        ดินแดนแห่งหนึ่งที่ทุกอย่างถูกควบคุมด้วยกฎของตัวเลข
+        <br>กำลังรอผู้กล้าที่จะเข้ามาพิสูจน์ตัวเอง
+      </p>
+      <p>
+        เลือกเส้นทางของเจ้า แล้วออกเดินทางผจญภัยผ่านบททดสอบ
+        <br>เพื่อพิสูจน์ว่าตัวเลขไม่ใช่ศัตรู
+      </p>
     </div>
 
-    <div id="screen-game">
-        <div id="story-box">
-            <p id="chapter-label">ด่านที่ 1</p>
-            <p id="story-text">เนื้อเรื่องจะแสดงตรงนี้...</p>
-        </div>
-        <div id="problem-box">
-            <p id="problem-equation">5 + 3 = ?</p>
-        </div>
-
-        <div id="answer-box">
-        </div>
-
-        <button id="btn-hint" onclick="toggleHint()">💡 คำใบ้</button>
-        <div id="hint-box" style="display:none">
-        <p id="hint-text"></p>
-        </div>
-
-        <div id="feedback-box">
-            <p id="feedback-text"></p>
-        </div>
-
-        <button id="btn-next" onclick="nextQuestion()" style="display:none">
-            ต่อไป →
-        </button>
+    <div id="difficulty-buttons">
+      <button onclick="startGame('easy')">🌿 ง่าย</button>
+      <button onclick="startGame('medium')">⚔️ กลาง</button>
+      <button onclick="startGame('hard')">🔥 ยาก</button>
     </div>
-    <div id="screen-result">
-        <p id="result-story">เนื้อเรื่องตอนจบจะแสดงตรงนี้...</p>
-        <p id="result-score">คะแนนของเจ้า: 0</p>
-        <button onclick="goHome()">เล่นอีกครั้ง</button>
+
+    <button id="about-btn" onclick="showScreen('screen-about')">✨ เกี่ยวกับ</button>
   </div>
+
+  <!-- หน้า ABOUT -->
+  <div id="screen-about">
+    <h2>✨ จัดทำโดย</h2>
+    <div class="member-list">
+      <p>นายกฤษฎา ทองศรี เลขที่ 1</p>
+      <p>นายจิรภักดิ์ จิณาพันธ์ เลขที่ 3</p>
+      <p>นายธีรภัจษฎา บัวสมุย เลขที่ 7</p>
+      <p>นายยิ่งคุณ บุญประกอบ เลขที่ 9</p>
+      <p>นายศรายุทธ ดวงสาพล เลขที่ 10</p>
+    </div>
+    <button onclick="showScreen('screen-home')">← กลับหน้าหลัก</button>
+  </div>
+
+  <!-- หน้าเกม -->
+  <div id="screen-game">
+    <div id="story-box">
+      <p id="chapter-label">ด่านที่ 1</p>
+      <p id="story-text">เนื้อเรื่องจะแสดงตรงนี้...</p>
+    </div>
+
+    <div id="problem-box">
+      <p id="problem-equation">5 + 3 = ?</p>
+    </div>
+
+    <div id="answer-box"></div>
+
+    <button id="btn-hint" onclick="toggleHint()">💡 คำใบ้</button>
+    <div id="hint-box" style="display:none">
+      <p id="hint-text"></p>
+    </div>
+
+    <div id="feedback-box">
+      <p id="feedback-text"></p>
+    </div>
+
+    <button id="btn-next" onclick="nextQuestion()" style="display:none">
+      ต่อไป →
+    </button>
+  </div>
+
+  <!-- หน้าผล -->
+  <div id="screen-result">
+    <p id="result-story">เนื้อเรื่องตอนจบจะแสดงตรงนี้...</p>
+    <p id="result-score">คะแนนของเจ้า: 0</p>
+    <button onclick="goHome()">🌿 เล่นอีกครั้ง</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

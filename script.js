@@ -445,6 +445,7 @@ function showScreen(screenId) {
   document.getElementById('screen-home').style.display   = 'none'
   document.getElementById('screen-game').style.display   = 'none'
   document.getElementById('screen-result').style.display = 'none'
+  document.getElementById('screen-about').style.display  = 'none' 
 
   document.getElementById(screenId).style.display = 'block'
 }
