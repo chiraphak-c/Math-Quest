@@ -23,6 +23,7 @@ body {
   color: var(--text-color);
   font-family: 'Sarabun', sans-serif;
   min-height: 100vh;
+  min-height: -webkit-fill-available;  /* ← เพิ่มบรรทัดนี้ */
 }
 #screen-home {
     max-width: 600px;       
@@ -112,6 +113,9 @@ header p {
   box-shadow: 0 8px 20px rgba(224, 92, 92, 0.35);
 }
 
+html {
+  height: -webkit-fill-available;     /* ← เพิ่ม */
+}
 
 @media (max-width: 480px) {
   header h1 {
