@@ -118,6 +118,31 @@ header p {
     font-size: 1.8rem;
   }
 
+  header p {
+    font-size: 0.9rem;       /* ← เพิ่ม */
+  }
+
+  #intro-story p {
+    font-size: 0.9rem;       /* ← เพิ่ม */
+  }
+
+  #problem-equation {
+    font-size: 1.3rem;       /* ← เพิ่ม เพราะ LaTeX อาจยาวมาก */
+  }
+
+  #answer-box button {
+    font-size: 0.9rem;       /* ← เพิ่ม */
+    padding: 10px 12px;      /* ← เพิ่ม */
+  }
+
+  #screen-about .member-list p {
+    font-size: 0.9rem;       /* ← เพิ่ม */
+  }
+
+  #result-score {
+    font-size: 1.2rem;       /* ← เพิ่ม */
+  }
+
   #difficulty-buttons {
     flex-direction: column;  
     align-items: center;
