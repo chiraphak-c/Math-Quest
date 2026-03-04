@@ -9,35 +9,45 @@
   --card-bg:      #0f2318;  
   --border-color: rgba(57, 255, 133, 0.3);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   background-image: url(Bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;  
+  background-attachment: fixed;
   color: var(--text-color);
   font-family: 'Sarabun', sans-serif;
   min-height: 100vh;
-  min-height: -webkit-fill-available;  /* ← เพิ่มบรรทัดนี้ */
+  min-height: -webkit-fill-available;
 }
-#screen-home {
-    max-width: 600px;       
-    margin: 0 auto; 
-    margin-top: 100px;       
-    padding: 60px 20px;     
-    text-align: center;
-    background: rgba(21, 56, 37, 0.49);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.2px);
-    -webkit-backdrop-filter: blur(9.2px);
-    }
 
+
+/* =============================================
+   หน้า HOME
+============================================= */
+#screen-home {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(21, 56, 37, 0.49);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+}
 
 header h1 {
   font-size: 2.5rem;
@@ -58,36 +68,36 @@ header p {
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 40px;
-  text-align: center; 
+  text-align: center;
 }
 
 #intro-story p {
   font-size: 1rem;
-  line-height: 1.8; 
+  line-height: 1.8;
   color: var(--text-color);
 }
 
 #difficulty-buttons {
   display: flex;
-  gap: 16px;             
+  gap: 16px;
   justify-content: center;
 }
 
 #difficulty-buttons button {
-  flex: 1;             
+  flex: 1;
   max-width: 160px;
   padding: 16px 12px;
-  border: 1px solid;  
+  border: 1px solid;
   border-radius: 10px;
   background: transparent;
   font-size: 1rem;
   font-family: 'Sarabun', sans-serif;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s; 
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 #difficulty-buttons button:hover {
-  transform: translateY(-4px);  
+  transform: translateY(-4px);
 }
 
 #difficulty-buttons button:nth-child(1) {
@@ -113,64 +123,40 @@ header p {
   box-shadow: 0 8px 20px rgba(224, 92, 92, 0.35);
 }
 
-html {
-  height: -webkit-fill-available;     /* ← เพิ่ม */
+#about-btn {
+  margin-top: 24px;
+  background: transparent;
+  border: 1px solid var(--text-muted);
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  font-family: 'Sarabun', sans-serif;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  header p {
-    font-size: 0.9rem;       /* ← เพิ่ม */
-  }
-
-  #intro-story p {
-    font-size: 0.9rem;       /* ← เพิ่ม */
-  }
-
-  #problem-equation {
-    font-size: 1.3rem;       /* ← เพิ่ม เพราะ LaTeX อาจยาวมาก */
-  }
-
-  #answer-box button {
-    font-size: 0.9rem;       /* ← เพิ่ม */
-    padding: 10px 12px;      /* ← เพิ่ม */
-  }
-
-  #screen-about .member-list p {
-    font-size: 0.9rem;       /* ← เพิ่ม */
-  }
-
-  #result-score {
-    font-size: 1.2rem;       /* ← เพิ่ม */
-  }
-
-  #difficulty-buttons {
-    flex-direction: column;  
-    align-items: center;
-  }
-
-  #difficulty-buttons button {
-    max-width: 100%;
-    width: 100%;
-  }
+#about-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
+
+/* =============================================
+   หน้าเกม
+============================================= */
 #screen-game {
   max-width: 600px;
   margin: 0 auto;
   margin-top: 40px;
   padding: 40px 20px;
+  min-height: 90vh;
   background: rgba(21, 56, 37, 0.49);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.2px);
   -webkit-backdrop-filter: blur(9.2px);
-  min-height: 90vh;        /* ← เพิ่มบรรทัดนี้ */
 }
-
 
 #story-box {
   background-color: var(--card-bg);
@@ -210,11 +196,10 @@ html {
 
 #answer-box {
   display: flex;
-  flex-direction: column;   /* ← เปลี่ยนจาก row เป็น column */
+  flex-direction: column;
   gap: 12px;
   margin-bottom: 16px;
 }
-
 
 #answer-box button {
   width: 100%;
@@ -225,7 +210,7 @@ html {
   color: var(--text-color);
   font-size: 1rem;
   font-family: 'Sarabun', sans-serif;
-  text-align: left;        /* ← ข้อความชิดซ้าย อ่านง่ายกว่า */
+  text-align: left;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
@@ -238,74 +223,6 @@ html {
 #answer-box button:disabled {
   cursor: default;
   opacity: 0.6;
-}
-#answer-box button:hover {
-  opacity: 0.85;
-}
-
-#feedback-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  min-height: 24px;  
-}
-
-#btn-next {
-  display: block;
-  width: 100%;
-  margin-top: 16px;
-  background: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 1rem;
-  font-family: 'Sarabun', sans-serif;
-  color: var(--accent);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#btn-next:hover {
-  background-color: rgba(57, 255, 133, 0.1);
-}
-
-#screen-result {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-#result-story {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-muted);
-}
-
-#result-score {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin-bottom: 32px;
-}
-
-#screen-result button {
-  background: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  padding: 14px 40px;
-  font-size: 1rem;
-  font-family: 'Sarabun', sans-serif;
-  color: var(--accent);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#screen-result button:hover {
-  background-color: rgba(57, 255, 133, 0.1);
 }
 
 #btn-hint {
@@ -341,6 +258,85 @@ html {
   line-height: 1.6;
 }
 
+#feedback-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 24px;
+}
+
+#btn-next {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: 'Sarabun', sans-serif;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#btn-next:hover {
+  background-color: rgba(57, 255, 133, 0.1);
+}
+
+
+/* =============================================
+   หน้าผล
+============================================= */
+#screen-result {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(21, 56, 37, 0.49);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+}
+
+#result-story {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+#result-score {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+
+#screen-result button {
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-family: 'Sarabun', sans-serif;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#screen-result button:hover {
+  background-color: rgba(57, 255, 133, 0.1);
+}
+
+
+/* =============================================
+   หน้า ABOUT
+============================================= */
 #screen-about {
   max-width: 600px;
   margin: 0 auto;
@@ -398,20 +394,55 @@ html {
   background-color: rgba(57, 255, 133, 0.1);
 }
 
-#about-btn {
-  margin-top: 24px;
-  background: transparent;
-  border: 1px solid var(--text-muted);
-  border-radius: 8px;
-  padding: 10px 24px;
-  font-size: 0.85rem;
-  font-family: 'Sarabun', sans-serif;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
 
-#about-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+/* =============================================
+   Responsive — มือถือ
+============================================= */
+@media (max-width: 480px) {
+  #screen-home,
+  #screen-game,
+  #screen-result,
+  #screen-about {
+    margin-top: 40px;
+    border-radius: 12px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  #intro-story p {
+    font-size: 0.9rem;
+  }
+
+  #problem-equation {
+    font-size: 1.3rem;
+  }
+
+  #answer-box button {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  #result-score {
+    font-size: 1.2rem;
+  }
+
+  #screen-about .member-list p {
+    font-size: 0.9rem;
+  }
+
+  #difficulty-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #difficulty-buttons button {
+    max-width: 100%;
+    width: 100%;
+  }
 }
