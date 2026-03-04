@@ -168,6 +168,7 @@ html {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.2px);
   -webkit-backdrop-filter: blur(9.2px);
+  min-height: 90vh;        /* ← เพิ่มบรรทัดนี้ */
 }
 
 
