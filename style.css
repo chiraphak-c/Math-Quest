@@ -405,6 +405,12 @@ header p {
     margin-top: 40px;
     border-radius: 12px;
   }
+    body {
+    background-attachment: scroll;   /* ← เปลี่ยนจาก fixed */
+    background-size: cover;
+    background-position: center top;
+        }
+    }
 
   header h1 {
     font-size: 1.8rem;
